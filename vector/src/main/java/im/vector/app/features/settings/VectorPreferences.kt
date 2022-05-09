@@ -142,6 +142,7 @@ class VectorPreferences @Inject constructor(
 
         // Calls
         const val SETTINGS_CALL_PREVENT_ACCIDENTAL_CALL_KEY = "SETTINGS_CALL_PREVENT_ACCIDENTAL_CALL_KEY"
+        const val SETTINGS_CALL_USE_FALLBACK_CALL_ASSIST_SERVER_KEY = "SETTINGS_CALL_USE_FALLBACK_CALL_ASSIST_SERVER_KEY"
         const val SETTINGS_CALL_RINGTONE_USE_RIOT_PREFERENCE_KEY = "SETTINGS_CALL_RINGTONE_USE_RIOT_PREFERENCE_KEY"
         const val SETTINGS_CALL_RINGTONE_URI_PREFERENCE_KEY = "SETTINGS_CALL_RINGTONE_URI_PREFERENCE_KEY"
 
@@ -723,6 +724,13 @@ class VectorPreferences @Inject constructor(
      */
     fun preventAccidentalCall(): Boolean {
         return defaultPrefs.getBoolean(SETTINGS_CALL_PREVENT_ACCIDENTAL_CALL_KEY, false)
+    }
+
+    /**
+     * Tells if turn.matrix should be used during calls as a fallback
+     */
+    fun useFallbackTurnServer(): Boolean {
+        return defaultPrefs.getBoolean(SETTINGS_CALL_USE_FALLBACK_CALL_ASSIST_SERVER_KEY, false)
     }
 
     /**
