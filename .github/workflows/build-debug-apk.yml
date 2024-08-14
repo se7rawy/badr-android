@@ -1,5 +1,5 @@
 
-name: APK Build
+name: build debug apk
 
 on:
   pull_request: { }
