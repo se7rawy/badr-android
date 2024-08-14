@@ -42,7 +42,7 @@ jobs:
 # Send to the APK to Telegram
       - name: Send the APK to Telegram
         env:
-          APK_PATH: vector-app/build/outputs/apk/*/debug/*.apk
+          APK_PATH: vector-app/build/outputs/apk/gplay/debug/vector-gplay-x86_64-debug.apk
           BOT_API_KEY: ${{ secrets.BOT_API_KEY }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
