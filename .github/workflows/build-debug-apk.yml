@@ -30,12 +30,12 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         with:
           cache-read-only: ${{ github.ref != 'refs/heads/develop' }}
-      - name: Assemble ${{ matrix.target }} debug apk
-        run: ./gradlew assemble${{ matrix.target }}Debug $CI_GRADLE_ARG_PROPERTIES
-      - name: Upload ${{ matrix.target }} debug APKs
+      - name: Assemble vector-gplay-arm64-v8a debug apk
+        run: ./gradlew assembleVectorGplayArm64V8aDebug $CI_GRADLE_ARG_PROPERTIES
+      - name: Upload vector-gplay-arm64-v8a debug APKs
         uses: actions/upload-artifact@v3
         with:
-          name: vector-gplay-x86-debug
+          name: vector-gplay-arm64-v8a-debug
           path: |
-            vector-app/build/outputs/apk/gplay/debug/vector-gplay-x86-debug.apk
+            vector-app/build/outputs/apk/gplay/debug/vector-gplay-arm64-v8a-debug.apk
  
