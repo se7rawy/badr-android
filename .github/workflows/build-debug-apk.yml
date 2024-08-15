@@ -34,7 +34,7 @@ jobs:
       - name: Upload ${{ matrix.target }} debug APKs
         uses: actions/upload-artifact@v3
         with:
-          name: vector-gplay-universal-debug
+          name: vector-gplay-x86-debug
           path: |
-            vector-app/build/outputs/apk/gplay/debug/vector-gplay-universal-debug.apk
+            vector-app/build/outputs/apk/gplay/debug/vector-gplay-x86-debug.apk
  
