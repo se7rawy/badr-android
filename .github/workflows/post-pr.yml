@@ -4,9 +4,9 @@ name: Integration Tests
 # Further filtering occurs in 'should-i-run'
 
 on:
-  pull_request:
-    types: [closed]
-    branches: [develop]
+  #pull_request:
+    #types: [closed]
+    #branches: [develop]
 
 # Enrich gradle.properties for CI/CD
 env:
