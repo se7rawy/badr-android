@@ -13,9 +13,17 @@ env:
 
 jobs:
   debug:
-    name: Build debug APKs gplay-arm64-v8a-debug
+    name: Build debug APKs (${{ matrix.target }})
     runs-on: ubuntu-latest
-    
+    if: github.ref != 'refs/heads/main'
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [ Gplay ]
+    # Allow all jobs on develop. Just one per PR.
+    concurrency:
+      group: ${{ github.ref == 'refs/heads/develop' && format('integration-tests-develop-{0}-{1}', matrix.target, github.sha) || format('build-debug-{0}-{1}', matrix.target, github.ref)  }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,8 +38,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         with:
           cache-read-only: ${{ github.ref != 'refs/heads/develop' }}
-      - name: gplay-arm64-v8a-debug debug apk
-        run: ./gradlew assembleGplayArm64V8aDebug $CI_GRADLE_ARG_PROPERTIES
+      - name: Assemble ${{ matrix.target }} debug apk
+        run: ./gradlew assemble${{ matrix.target }}Debug $CI_GRADLE_ARG_PROPERTIES
       - name: Upload vector-gplay-arm64-v8a debug APKs
         uses: actions/upload-artifact@v3
         with:
