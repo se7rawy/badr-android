@@ -32,7 +32,7 @@
             android:persistent="false"
             android:summary="@string/settings_discovery_manage"
             android:title="@string/settings_discovery_category" 
-            android:visibility="invisible"/>
+            app:isPreferenceVisible="false"/>
 
         <im.vector.app.core.preference.VectorPreference
             android:key="SETTINGS_EXTERNAL_ACCOUNT_MANAGEMENT_KEY"
@@ -60,7 +60,7 @@
 
     <im.vector.app.core.preference.VectorPreferenceCategory 
            android:title="@string/settings_integrations"
-           android:visibility="invisible">
+           app:isPreferenceVisible="false">
 
         <im.vector.app.core.preference.VectorPreference
             android:focusable="false"
@@ -97,7 +97,7 @@
             android:key="SETTINGS_IDENTITY_SERVER_PREFERENCE_KEY"
             android:title="@string/settings_identity_server"
             tools:summary="https://identity.server.url"
-            android:visibility="invisible" />
+            app:isPreferenceVisible="false" />
 
         <im.vector.app.core.preference.VectorPreference
             android:key="SETTINGS_CLEAR_MEDIA_CACHE_PREFERENCE_KEY"
