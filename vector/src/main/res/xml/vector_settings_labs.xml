@@ -51,7 +51,7 @@
         android:persistent="false"
         android:summary="@string/labs_enable_msc3061_share_history_desc"
         android:title="@string/labs_enable_msc3061_share_history" 
-        android:visibility="invisible"/>
+        app:isPreferenceVisible="false"/>
 
     <im.vector.app.core.preference.VectorSwitchPreference
         android:defaultValue="false"
