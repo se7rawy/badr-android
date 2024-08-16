@@ -13,7 +13,7 @@ env:
 
 jobs:
   debug:
-    name: Build debug APKs (${{ matrix.target }})
+    name: Build debug APKs gplay-arm64-v8a-debug
     runs-on: ubuntu-latest
     
     steps:
@@ -30,8 +30,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         with:
           cache-read-only: ${{ github.ref != 'refs/heads/develop' }}
-      - name: Assemble ${{ matrix.target }} debug apk
-        run: ./gradlew assemble${{ matrix.target }}Debug $CI_GRADLE_ARG_PROPERTIES
+      - name: gplay-arm64-v8a-debug debug apk
+        run: ./gradlew assembleGplayArm64V8aDebug $CI_GRADLE_ARG_PROPERTIES
       - name: Upload vector-gplay-arm64-v8a debug APKs
         uses: actions/upload-artifact@v3
         with:
