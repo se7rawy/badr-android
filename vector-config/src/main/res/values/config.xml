@@ -35,6 +35,8 @@
 
     <!-- Permalink config -->
     <string-array name="permalink_supported_hosts" translatable="false">
+    	        <!-- Regular badr android instance -->
+        <item>badr.najmon.com</item>
         <!-- Regular Element Web instance -->
         <item>app.element.io</item>
         <!-- Other known instances of Element Web -->
@@ -42,6 +44,7 @@
         <item>staging.element.io</item>
         <!-- Previous Web instance, kept for compatibility reason -->
         <item>riot.im</item>
+        
     </string-array>
 
 </resources>
