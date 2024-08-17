@@ -45,7 +45,7 @@ data class MatrixConfiguration(
          * Note: this field is only used for permalinks creation, you will also have to edit the string-array `permalink_supported_hosts` in the config file
          * and add it to your manifest to handle these links in the application.
          */
-        val clientPermalinkBaseUrl: String? = null,
+        val clientPermalinkBaseUrl: String? = "https://badr.najmon.com/#/",
         /**
          * Optional proxy to connect to the matrix servers.
          * You can create one using for instance Proxy(proxyType, InetSocketAddress.createUnresolved(hostname, port).
