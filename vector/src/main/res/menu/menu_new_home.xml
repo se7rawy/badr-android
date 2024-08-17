@@ -22,14 +22,14 @@
         android:icon="@drawable/ic_material_bug_report"
         android:title="@string/send_suggestion"
         app:showAsAction="never" 
-        app:isPreferenceVisible="false"/>
+        android:visibility="invisible"/>
 
     <item
         android:id="@+id/menu_home_report_bug"
         android:icon="@drawable/ic_material_bug_report"
         android:title="@string/send_bug_report"
         app:showAsAction="never" 
-        app:isPreferenceVisible="false"/>
+        android:visibility="invisible"/>
 
     <item
         android:id="@+id/menu_home_init_sync_legacy"
